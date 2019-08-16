@@ -1,0 +1,50 @@
+<h1>New Workout</h1>
+<form>
+    <fieldset>
+        <label for="name">
+            Workout:
+            <input id="name" type="text" name="name">
+        </label>
+        <label for="reps">
+            Reps:
+            <input type="number" name="reps" id="reps" min="0">
+        </label>
+        <label for="weight">
+            Weight:
+            <input type="number" name="weight" id="weight" min="0">
+        </label>
+        <label for="units">
+            Units:
+            <select name="units" id="units">
+                <option value="lbs">lbs</option>
+                <option value="kg">kg</option>
+            </select>
+        </label>
+        <label for="date">
+            Date:
+            <input type="text" name="datepicker" id="datepicker" readonly="readonly">
+        </label>
+        <input type="submit" id="submit" value="Submit!">
+    </fieldset>
+</form>
+<br>
+<table id="table">
+    <thead>
+    <tr>
+        <th>Workout Name</th>
+        <th>Reps</th>
+        <th>Weight</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+</table>
+<script type="text/javascript" src="/javascripts/workouts.js"></script>
+<script>
+        {{#each rows}}
+        addRow("{{this.id}}", "{{this.name}}", "{{this.reps}}", "{{this.weight}}", "{{this.units}}", "{{this.date}}");
+        {{/each}}
+</script>
