@@ -1,2 +1,1 @@
-# cs290_database
-Final assignment for CS 290
+Server code for cs 361 demo project
